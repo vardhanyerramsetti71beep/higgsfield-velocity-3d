@@ -33,6 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const carCards = document.querySelectorAll('.car-card');
   const resModelSelect = document.getElementById('res-model');
 
+  // --- MODEL SPECS DICTIONARY (MATCHED TO REFERENCE IMAGES) ---
+  const modelSpecs = {
+    lamborghini_aventador: { speed: '355', zero: '2.80', power: '770', cd: '0.230' },
+    porsche_taycan: { speed: '260', zero: '2.60', power: '750', cd: '0.220' },
+    aston_martin_dbx: { speed: '310', zero: '3.10', power: '707', cd: '0.360' },
+    jaguar_ftype_roadster: { speed: '300', zero: '3.50', power: '575', cd: '0.320' },
+    rolls_royce_phantom: { speed: '250', zero: '5.10', power: '563', cd: '0.380' },
+    mercedes_s_class: { speed: '250', zero: '4.40', power: '503', cd: '0.220' },
+    toyota_tundra: { speed: '180', zero: '5.70', power: '437', cd: '0.420' }
+  };
+
+  const statSpeed = document.getElementById('hero-stat-speed');
+  const statZero = document.getElementById('hero-stat-zero');
+  const statPower = document.getElementById('hero-stat-power');
+  const statCd = document.getElementById('hero-stat-cd');
+
   function switchModel(modelId) {
     currentModel = modelId;
     engine.carModel.setModel(modelId);
@@ -48,6 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
     carCards.forEach((card) => {
       card.classList.toggle('selected', card.dataset.model === modelId);
     });
+
+    // Update hero telemetry stats
+    const sp = modelSpecs[modelId];
+    if (sp) {
+      if (statSpeed) statSpeed.innerHTML = `${sp.speed}<span class="stat-unit">KM/H</span>`;
+      if (statZero) statZero.innerHTML = `${sp.zero}<span class="stat-unit">SEC</span>`;
+      if (statPower) statPower.innerHTML = `${sp.power}<span class="stat-unit">HP</span>`;
+      if (statCd) statCd.innerHTML = `${sp.cd}<span class="stat-unit">Cd</span>`;
+    }
 
     // Sync reservation select
     if (resModelSelect) {

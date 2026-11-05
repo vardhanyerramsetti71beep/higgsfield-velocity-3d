@@ -58,10 +58,13 @@
     <!-- Floating HUD Bottom Bar -->
     <div class="bottom-hud clickable">
       <div class="model-pill-group">
-        <button class="model-pill active" data-model="apex_gt">Apex GT</button>
-        <button class="model-pill" data-model="spectre_gt">Spectre GT</button>
-        <button class="model-pill" data-model="cyber_suv">Cyber SUV</button>
-        <button class="model-pill" data-model="mach_iv">Mach-IV</button>
+        <button class="model-pill active" data-model="lamborghini_aventador">Lambo SVJ</button>
+        <button class="model-pill" data-model="porsche_taycan">Porsche Taycan</button>
+        <button class="model-pill" data-model="aston_martin_dbx">Aston DBX707</button>
+        <button class="model-pill" data-model="jaguar_ftype_roadster">Jaguar F-Type</button>
+        <button class="model-pill" data-model="rolls_royce_phantom">Rolls Phantom</button>
+        <button class="model-pill" data-model="mercedes_s_class">Mercedes S-Class</button>
+        <button class="model-pill" data-model="toyota_tundra">Toyota Tundra</button>
       </div>
 
       <div class="hud-divider"></div>
@@ -117,19 +120,19 @@
           <!-- Live Telemetry Stats -->
           <div class="telemetry-grid">
             <div class="stat-box">
-              <div class="stat-value">432<span class="stat-unit">KM/H</span></div>
+              <div id="hero-stat-speed" class="stat-value">355<span class="stat-unit">KM/H</span></div>
               <div class="stat-label">Top Speed</div>
             </div>
             <div class="stat-box">
-              <div class="stat-value">1.78<span class="stat-unit">SEC</span></div>
+              <div id="hero-stat-zero" class="stat-value">2.80<span class="stat-unit">SEC</span></div>
               <div class="stat-label">0-100 KM/H</div>
             </div>
             <div class="stat-box">
-              <div class="stat-value">1,320<span class="stat-unit">KG</span></div>
-              <div class="stat-label">Downforce @ 300 KM/H</div>
+              <div id="hero-stat-power" class="stat-value">770<span class="stat-unit">HP</span></div>
+              <div class="stat-label">Peak Power</div>
             </div>
             <div class="stat-box">
-              <div class="stat-value">0.198<span class="stat-unit">Cd</span></div>
+              <div id="hero-stat-cd" class="stat-value">0.230<span class="stat-unit">Cd</span></div>
               <div class="stat-label">Drag Coefficient</div>
             </div>
           </div>
@@ -330,100 +333,200 @@
         </div>
 
         <div class="models-grid clickable">
-          <!-- Model Card 1 -->
-          <div class="car-card selected" data-model="apex_gt">
-            <span class="car-type-badge">Track Hypercar</span>
-            <h3 class="car-name">AETHER APEX GT</h3>
+          <!-- Reference Model 1: Lamborghini Aventador SVJ -->
+          <div class="car-card selected" data-model="lamborghini_aventador">
+            <div class="reference-thumb-box">
+              <img src="./references/lamborghini_aventador_front.jpg" alt="Lamborghini Aventador SVJ Reference" class="reference-thumb">
+              <span class="ref-badge">📸 USER REFERENCE #1</span>
+            </div>
+            <span class="car-type-badge">V12 Wedge Hypercar</span>
+            <h3 class="car-name">LAMBORGHINI AVENTADOR SVJ</h3>
             <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
-              Extreme track-focused weapon with dual active wings, front dive planes, and venturi underfloor tunnels.
+              Wedge aerodynamic nose with red geometric livery, active SVJ rear wing, dual high center exhausts, and Leirion center-lock wheels.
             </p>
             <div class="car-card-specs">
               <div>
-                <div class="card-spec-val">432 <span style="font-size: 0.65rem;">KM/H</span></div>
+                <div class="card-spec-val">355 <span style="font-size: 0.65rem;">KM/H</span></div>
                 <div class="card-spec-lbl">Top Speed</div>
               </div>
               <div>
-                <div class="card-spec-val">1.78 <span style="font-size: 0.65rem;">S</span></div>
+                <div class="card-spec-val">2.8 <span style="font-size: 0.65rem;">S</span></div>
                 <div class="card-spec-lbl">0-100 KM/H</div>
               </div>
               <div>
-                <div class="card-spec-val">1,620 <span style="font-size: 0.65rem;">HP</span></div>
-                <div class="card-spec-lbl">Power</div>
+                <div class="card-spec-val">770 <span style="font-size: 0.65rem;">HP</span></div>
+                <div class="card-spec-lbl">V12 Atmo</div>
               </div>
             </div>
-            <button class="btn-secondary" style="width: 100%; text-align: center;">View in 3D</button>
+            <button class="btn-secondary" style="width: 100%; text-align: center;">Explore in 3D</button>
           </div>
 
-          <!-- Model Card 2 -->
-          <div class="car-card" data-model="spectre_gt">
-            <span class="car-type-badge">Luxury Electric GT</span>
-            <h3 class="car-name">SPECTRE GT</h3>
+          <!-- Reference Model 2: Porsche Taycan Turbo S -->
+          <div class="car-card" data-model="porsche_taycan">
+            <div class="reference-thumb-box">
+              <img src="./references/porsche_taycan.jpg" alt="Porsche Taycan Reference" class="reference-thumb">
+              <span class="ref-badge">📸 USER REFERENCE #2</span>
+            </div>
+            <span class="car-type-badge">Electric Performance GT</span>
+            <h3 class="car-name">PORSCHE TAYCAN TURBO S</h3>
             <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
-              Sweeping aerodynamic fastback silhouette with panoramic glass roof and silent executive performance.
+              Carmine Red aerodynamic sport sedan with 4-point matrix LED air curtains ("tear ducts"), low sloping bonnet, and glass rear lightbar.
             </p>
             <div class="car-card-specs">
               <div>
-                <div class="card-spec-val">385 <span style="font-size: 0.65rem;">KM/H</span></div>
+                <div class="card-spec-val">260 <span style="font-size: 0.65rem;">KM/H</span></div>
                 <div class="card-spec-lbl">Top Speed</div>
               </div>
               <div>
-                <div class="card-spec-val">2.15 <span style="font-size: 0.65rem;">S</span></div>
+                <div class="card-spec-val">2.6 <span style="font-size: 0.65rem;">S</span></div>
                 <div class="card-spec-lbl">0-100 KM/H</div>
               </div>
               <div>
-                <div class="card-spec-val">1,250 <span style="font-size: 0.65rem;">HP</span></div>
-                <div class="card-spec-lbl">Power</div>
+                <div class="card-spec-val">750 <span style="font-size: 0.65rem;">HP</span></div>
+                <div class="card-spec-lbl">Overboost</div>
               </div>
             </div>
-            <button class="btn-secondary" style="width: 100%; text-align: center;">View in 3D</button>
+            <button class="btn-secondary" style="width: 100%; text-align: center;">Explore in 3D</button>
           </div>
 
-          <!-- Model Card 3 -->
-          <div class="car-card" data-model="cyber_suv">
-            <span class="car-type-badge">All-Terrain Super SUV</span>
-            <h3 class="car-name">VALKYRIE CYBER-SUV</h3>
+          <!-- Reference Model 3: Aston Martin DBX707 -->
+          <div class="car-card" data-model="aston_martin_dbx">
+            <div class="reference-thumb-box">
+              <img src="./references/aston_martin_dbx.jpg" alt="Aston Martin DBX Reference" class="reference-thumb">
+              <span class="ref-badge">📸 USER REFERENCE #3</span>
+            </div>
+            <span class="car-type-badge">Ultra-Luxury Super SUV</span>
+            <h3 class="car-name">ASTON MARTIN DBX707</h3>
             <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
-              Geometric angular bodywork with elevated clearance, expedition roof rack, and forged hex alloys.
+              Metallic Cobalt Blue with massive iconic DB 6-bar horizontal vane grille, twin bonnet extractors, and carbon aerodynamic side sills.
             </p>
             <div class="car-card-specs">
               <div>
-                <div class="card-spec-val">340 <span style="font-size: 0.65rem;">KM/H</span></div>
+                <div class="card-spec-val">310 <span style="font-size: 0.65rem;">KM/H</span></div>
                 <div class="card-spec-lbl">Top Speed</div>
               </div>
               <div>
-                <div class="card-spec-val">2.60 <span style="font-size: 0.65rem;">S</span></div>
+                <div class="card-spec-val">3.1 <span style="font-size: 0.65rem;">S</span></div>
                 <div class="card-spec-lbl">0-100 KM/H</div>
               </div>
               <div>
-                <div class="card-spec-val">1,100 <span style="font-size: 0.65rem;">HP</span></div>
-                <div class="card-spec-lbl">Power</div>
+                <div class="card-spec-val">707 <span style="font-size: 0.65rem;">HP</span></div>
+                <div class="card-spec-lbl">Twin-Turbo</div>
               </div>
             </div>
-            <button class="btn-secondary" style="width: 100%; text-align: center;">View in 3D</button>
+            <button class="btn-secondary" style="width: 100%; text-align: center;">Explore in 3D</button>
           </div>
 
-          <!-- Model Card 4 -->
-          <div class="car-card" data-model="mach_iv">
-            <span class="car-type-badge">Open-Cockpit Speedster</span>
-            <h3 class="car-name">MACH-IV SPEEDSTER</h3>
+          <!-- Reference Model 4: Jaguar F-Type Roadster -->
+          <div class="car-card" data-model="jaguar_ftype_roadster">
+            <div class="reference-thumb-box">
+              <img src="./references/jaguar_ftype_roadster.jpg" alt="Jaguar F-Type Roadster Reference" class="reference-thumb">
+              <span class="ref-badge">📸 USER REFERENCE #4</span>
+            </div>
+            <span class="car-type-badge">Open-Cockpit Roadster</span>
+            <h3 class="car-name">JAGUAR F-TYPE ROADSTER</h3>
             <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
-              Raw visceral open-air cockpit with twin aerodynamic headrest cowls and central shark fin stabilizer.
+              Velocity Red open-air roadster with twin rollover safety hoops, chicane LED taillights, and central trapezoidal diffuser exhaust.
             </p>
             <div class="car-card-specs">
               <div>
-                <div class="card-spec-val">415 <span style="font-size: 0.65rem;">KM/H</span></div>
+                <div class="card-spec-val">300 <span style="font-size: 0.65rem;">KM/H</span></div>
                 <div class="card-spec-lbl">Top Speed</div>
               </div>
               <div>
-                <div class="card-spec-val">1.88 <span style="font-size: 0.65rem;">S</span></div>
+                <div class="card-spec-val">3.5 <span style="font-size: 0.65rem;">S</span></div>
                 <div class="card-spec-lbl">0-100 KM/H</div>
               </div>
               <div>
-                <div class="card-spec-val">1,480 <span style="font-size: 0.65rem;">HP</span></div>
-                <div class="card-spec-lbl">Power</div>
+                <div class="card-spec-val">575 <span style="font-size: 0.65rem;">HP</span></div>
+                <div class="card-spec-lbl">Supercharged</div>
               </div>
             </div>
-            <button class="btn-secondary" style="width: 100%; text-align: center;">View in 3D</button>
+            <button class="btn-secondary" style="width: 100%; text-align: center;">Explore in 3D</button>
+          </div>
+
+          <!-- Reference Model 5: Rolls-Royce Phantom VIII -->
+          <div class="car-card" data-model="rolls_royce_phantom">
+            <div class="reference-thumb-box">
+              <img src="./references/rolls_royce_phantom.jpg" alt="Rolls-Royce Phantom Reference" class="reference-thumb">
+              <span class="ref-badge">📸 USER REFERENCE #5</span>
+            </div>
+            <span class="car-type-badge">Pinnacle Luxury Saloon</span>
+            <h3 class="car-name">ROLLS-ROYCE PHANTOM VIII</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+              Arctic White with upright hand-polished chrome Pantheon grille, Spirit of Ecstasy figurine, laser headlights, and coach suicide doors.
+            </p>
+            <div class="car-card-specs">
+              <div>
+                <div class="card-spec-val">250 <span style="font-size: 0.65rem;">KM/H</span></div>
+                <div class="card-spec-lbl">Top Speed</div>
+              </div>
+              <div>
+                <div class="card-spec-val">5.1 <span style="font-size: 0.65rem;">S</span></div>
+                <div class="card-spec-lbl">0-100 KM/H</div>
+              </div>
+              <div>
+                <div class="card-spec-val">563 <span style="font-size: 0.65rem;">HP</span></div>
+                <div class="card-spec-lbl">Twin-Turbo V12</div>
+              </div>
+            </div>
+            <button class="btn-secondary" style="width: 100%; text-align: center;">Explore in 3D</button>
+          </div>
+
+          <!-- Reference Model 6: Mercedes-Benz S-Class -->
+          <div class="car-card" data-model="mercedes_s_class">
+            <div class="reference-thumb-box">
+              <img src="./references/mercedes_s_class.jpg" alt="Mercedes S-Class Reference" class="reference-thumb">
+              <span class="ref-badge">📸 USER REFERENCE #6</span>
+            </div>
+            <span class="car-type-badge">Executive Aerodynamic Sedan</span>
+            <h3 class="car-name">MERCEDES-BENZ S-CLASS</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+              Selenite Grey with iconic 3-blade chrome shield grille, upright three-pointed star mascot, Digital Light eyebrows, and flush handles.
+            </p>
+            <div class="car-card-specs">
+              <div>
+                <div class="card-spec-val">250 <span style="font-size: 0.65rem;">KM/H</span></div>
+                <div class="card-spec-lbl">Top Speed</div>
+              </div>
+              <div>
+                <div class="card-spec-val">4.4 <span style="font-size: 0.65rem;">S</span></div>
+                <div class="card-spec-lbl">0-100 KM/H</div>
+              </div>
+              <div>
+                <div class="card-spec-val">503 <span style="font-size: 0.65rem;">HP</span></div>
+                <div class="card-spec-lbl">Mild Hybrid</div>
+              </div>
+            </div>
+            <button class="btn-secondary" style="width: 100%; text-align: center;">Explore in 3D</button>
+          </div>
+
+          <!-- Reference Model 7: Toyota Tundra Capstone -->
+          <div class="car-card" data-model="toyota_tundra">
+            <div class="reference-thumb-box">
+              <img src="./references/tundra_truck.jpg" alt="Toyota Tundra Capstone Reference" class="reference-thumb">
+              <span class="ref-badge">📸 USER REFERENCE #7</span>
+            </div>
+            <span class="car-type-badge">Heavy-Duty Luxury Truck</span>
+            <h3 class="car-name">TOYOTA TUNDRA CAPSTONE</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+              Wind Chill Pearl with massive octagonal chrome grille, bracket/Y LED headlights, dual hood power bulges, and high clearance truck bed.
+            </p>
+            <div class="car-card-specs">
+              <div>
+                <div class="card-spec-val">180 <span style="font-size: 0.65rem;">KM/H</span></div>
+                <div class="card-spec-lbl">Top Speed</div>
+              </div>
+              <div>
+                <div class="card-spec-val">5.7 <span style="font-size: 0.65rem;">S</span></div>
+                <div class="card-spec-lbl">0-100 KM/H</div>
+              </div>
+              <div>
+                <div class="card-spec-val">437 <span style="font-size: 0.65rem;">HP</span></div>
+                <div class="card-spec-lbl">i-FORCE MAX</div>
+              </div>
+            </div>
+            <button class="btn-secondary" style="width: 100%; text-align: center;">Explore in 3D</button>
           </div>
         </div>
       </div>
